@@ -25,8 +25,7 @@ const questions = [{
 
 function application () {
     inquirer.prompt(questions).then(answers => {
-        try {
-            
+        
             let shape;
             if (answers.shape === 'triangle') {
                 shape = new Triangle()
@@ -41,11 +40,10 @@ function application () {
             svg.setShape(shape)
             const logo = svg.render()
             fs.writeFileSync("examples/logo.svg",logo)
+            if (err) throw err;
             console.log("Success! Generated logo.svg")
-        } catch (error) {
-            console.log(error.message);
-        }
-    })
-}
+        }) 
+    }
+
 
 application();
