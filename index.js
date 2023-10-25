@@ -39,8 +39,10 @@ function application () {
             svg.setText(answers.textColor, answers.text)
             svg.setShape(shape)
             const logo = svg.render()
-            fs.writeFileSync("examples/logo.svg",logo)
-            if (err) throw err;
+            fs.writeFileSync("examples/logo.svg",logo, (err) => {
+                if (err) throw err;
+            
+            })
             console.log("Success! Generated logo.svg")
         }) 
     }
