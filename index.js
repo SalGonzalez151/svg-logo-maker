@@ -1,6 +1,7 @@
 const fs = require('fs');
-const shape = require('./Lib/shapes');
+const {Shapes, Circle, Square, Triangle} = require('./Lib/shapes');
 const inquirer = require('inquirer');
+const Svg = require('./Lib/svg')
 
 
 const questions = [{
@@ -11,7 +12,6 @@ const questions = [{
 }, { type: 'input',
     name: 'textColor',
     message: 'Please enter a color for the letters:',
-    choices: ['']
 }, {
     type: 'list',
     name: 'shape',
@@ -26,7 +26,21 @@ const questions = [{
 function application () {
     inquirer.prompt(questions).then(answers => {
         try {
-            fs.writeFileSync("examples/logo.svg", shape(answers))
+            
+            let shape;
+            if (answers.shape === 'triangle') {
+                shape = new Triangle()
+            } else if (answers.shape === 'square') {
+                shape = new Square();
+            } else {
+                shape = new Circle()
+            }
+            shape.setColor(answers.logoColor)
+            const svg = new Svg;
+            svg.setText(answers.textColor, answers.text)
+            svg.setShape(shape)
+            const logo = svg.render()
+            fs.writeFileSync("examples/logo.svg",logo)
             console.log("Success! Generated logo.svg")
         } catch (error) {
             console.log(error.message);

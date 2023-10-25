@@ -1,3 +1,5 @@
+const Svg = require("./svg")
+
 class Shapes {
     constructor() {
         this.color = "";
@@ -17,20 +19,20 @@ class Shapes {
 
 class Circle extends Shapes {
     render() {
-        return `<circle cx="150" cy="100" r="80" fill="${this.color}" /><text x="150" y="125" font-size"60" text-anchor-"middle" fill="${this.textColor}">${this.text}</text>`
+        return `<circle cx="150" cy="100" r="80" fill="${this.color}" />`
     }
 }
 
 class Square extends Shapes {
     render() {
-        return `<rect x="90" y="40" width="120" height="120" fill="${this.color}" /><text x="150" y="125" font-size="60" text-anchor="middle" fill="${this.textColor}">${this.text}</text>`
+        return `<rect x="90" y="40" width="120" height="120" fill="${this.color}" />`
     }
 }
 
 class Triangle extends Shapes {
     render() {
-        return `<polygon points="150, 18 244, 182 56, 182" fill="${this.color}" /><text x="150" y="125" font-size="60" text-anchor="middle" fill="${this.textColor}">${this.text}</text>`
+        return `<polygon points="150, 18 244, 182 56, 182" fill="${this.color}" />`
     }
 }
 
-const circle1 = new Circle()
+module.exports = {Shapes, Circle, Square, Triangle};
