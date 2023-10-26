@@ -3,7 +3,7 @@ const {Shapes, Circle, Square, Triangle} = require('./Lib/shapes');
 const inquirer = require('inquirer');
 const Svg = require('./Lib/svg')
 
-
+// questions for the inquirer prompt
 const questions = [{
     type: 'input',
     name: 'text',
@@ -23,9 +23,9 @@ const questions = [{
     message:'Please enter a color for the logo:'
 }];
 
+//function to ask questions and create a svg file
 function application () {
     inquirer.prompt(questions).then(answers => {
-        
             let shape;
             if (answers.shape === 'triangle') {
                 shape = new Triangle()

@@ -1,3 +1,4 @@
+//class to wrap the svg around the circle, triangle, and square function
 class Svg {
     constructor() {
        this.textElement = "";
