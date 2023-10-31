@@ -12,7 +12,7 @@ type npm i in the terminal
 
 type npm run start in the termal to run the script. Make sure the path in the termianl is correct up to the svg logo maker file. Answer the questions and the color and up to 3 letter chosen will be created in the examples directory.
 
-https://drive.google.com/file/d/1s1wvasN2SAwdymtTO3cvLOn2Txl9YjEE/view
+https://drive.google.com/file/d/12t56_aX5ok9PtvLv6lvYqwNAhMVpbG42/view
 
 ## Credits
 
